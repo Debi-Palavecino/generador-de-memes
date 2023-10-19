@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8fa83cd4ce.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="cuerpo" class="claro oscuro">
+    <header id="head">
+            <h1>Generador de Memes</h1>
+        <div class="conteiner-buttons">
+            <button id="texto-section"><i class="fa-solid fa-font"></i>Texto</button>
+            <button id="image-section"><i class="fa-regular fa-image"></i>Imagen</button>
+            <button id="white-mode">Modo Claro / Oscuro</button>
+        </div>
+    </header>
+    <br>
+    
+    <main id="main">
+        <div class="conteiner-meme">
+            <p class="text-up">Texto</p>
+            <img src="" alt="">
+            <p class="text-down">texto</p>
+        </div>
+    </main>
+    <aside id="option">
+        <button class="cerrar-panel">X</button>
+        <div id="section-text" class="active block">
+            <!--seccion de texto y todos sus inputs-->
+            <h2>Texto</h2>
+            <div class="texto-superior">
+                <h3>superior</h3>
+                <textarea name="text-up" id="textarea-superior"></textarea>
+                <div class="checkbox-superior">
+                    <input type="checkbox" name="no-text-up" id="up-no-text">
+                    <label for="up-no-text">Sin Texto Superior</label>
+                </div>
+            </div>
+            <div class="texto-inferior">
+                <h3>Inferior</h3>
+                <textarea name="text-down" id="textarea-inferior"></textarea>
+                <div class="checkbox-inferior">
+                    <input type="checkbox" name="no-text-down" id="down-no-text">
+                    <label for="down-no-text">Sin Texto Inferior</label>
+                </div>
+            </div>
+            <div class="conteiner-textStyle-buttons-font">
+                <div class="font-conteiner">
+                    <select name="fonts-type" id="fonts" class="tiposDe-fuente">
+                        <option value="Arial">Arial</option>
+                        <option value="Arial">Arial Black</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Times New Roman">Times New Roman/option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="American typewriter">American typewriter</option>
+                    </select>
+                </div>
+                <div class="flex-conteiner-butons">
+                    <input type="number" name="tamaño-de-fuente" id="font-size"value="40" min="0">
+                    <div class="conteiner-butons-align-text">
+                        <button class="button-control text-align-left"><i class="fa-solid fa-align-left"></i></button>
+                        <button class="button-control text-align-center"><i class="fa-solid fa-align-center"></i></button>
+                        <button class="button-control text-align-right"><i class="fa-solid fa-align-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="conteiner-control-color">
+                <div class="conteiner-text-color">
+                    <h3>Color</h3>
+                    <div class="input-control-text-color">
+                        <input type="color" name="color-text" id="color-texto">
+                        <label for="color-texto">#000000</label>
+                    </div>
+                </div>
+                <div class="conteiner-back-color">
+                    <h3>Fondo</h3>
+                    <div class="input-control-back-color">
+                        <input type="color" name="back-color" id="back-color">
+                        <label for="back-color">#000000</label>
+                    </div>
+                </div>
+            </div>
+            <div class="checkbox-fondo-transparente">
+                <input type="checkbox" name="back-transparent-text" id="back-transparent-color">
+                <label for="back-transparent-color">Fondo Transparente</label>
+            </div>
+            <div class="control-buttons-border-text">
+                <h3>Contorno</h3>
+                <div class="buttons-border">
+                    <button>Ninguno</button>
+                    <button>Claro</button>
+                    <button>Oscuro</button>
+                </div>
+            </div>
+            <div class="conteiner-input-padding-text">
+                <input type="number" name="" id="input-padding-text"  min="0">
+            </div>
+            <div class="conteiner-select-letter-line">
+                <select name="" id="select-value-letterSapcing">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2">1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
+            </div>
+        </div>
+
+
+
+        <div class="active block" id="section-image">
+            <!--Seccion de imagenes y todos sus inputs (type= range)-->
+            <h2>Imagen</h2>
+            <div class="conteiner-input-url">
+                <label for="conteiner-input-url">URL</label>
+                <input type="text" name="input-for-url" id="input-text-url">
+            </div>
+            <div class="section-Fondo">
+                <div>
+                    <input type="color" id="select-color-back-image">
+                    <span for="select-color-back-image">#000000</span>
+                </div>
+                <div>
+                    <select name="" id="select-filter">
+                        <option value="">Ninguno<option>
+                        <option value="">Desenfocar</option>
+                        <option value="">Luminosidad</option>
+                        <option value="">Oscurecer</option>
+                        <option value="">Multiplicar</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <h2>Filtros</h2>
+                <div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+</body>
+<script src="app.js"></script>
+</html>
