@@ -20,9 +20,9 @@
     
     <main id="main">
         <div class="conteiner-meme">
-            <p class="text-up">Texto</p>
+            <p id="textUP" class="text-up">Texto</p>
             <img src="" alt="">
-            <p class="text-down">texto</p>
+            <p id="textDown"class="text-down">texto</p>
         </div>
     </main>
     <aside id="option">
@@ -53,17 +53,17 @@
                         <option value="Arial">Arial Black</option>
                         <option value="Verdana">Verdana</option>
                         <option value="Helvetica">Helvetica</option>
-                        <option value="Times New Roman">Times New Roman/option>
+                        <option value="Times New Roman">Times New Roman</option>
                         <option value="Comic Sans MS">Comic Sans MS</option>
                         <option value="American typewriter">American typewriter</option>
                     </select>
                 </div>
                 <div class="flex-conteiner-butons">
-                    <input type="number" name="tamaño-de-fuente" id="font-size"value="40" min="0">
+                    <input type="number" name="tamaño-de-fuente" id="fonts-sizes"value="40" min="0">
                     <div class="conteiner-butons-align-text">
-                        <button class="button-control text-align-left"><i class="fa-solid fa-align-left"></i></button>
-                        <button class="button-control text-align-center"><i class="fa-solid fa-align-center"></i></button>
-                        <button class="button-control text-align-right"><i class="fa-solid fa-align-right"></i></button>
+                        <button class="button-control" id="text-align-left" ><i class="fa-solid fa-align-left"></i></button>
+                        <button class="button-control" id="text-align-center"><i class="fa-solid fa-align-center"></i></button>
+                        <button class="button-control" id="text-align-right"><i class="fa-solid fa-align-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -72,14 +72,14 @@
                     <h3>Color</h3>
                     <div class="input-control-text-color">
                         <input type="color" name="color-text" id="color-texto">
-                        <label for="color-texto">#000000</label>
+                        <label id="labelText"for="color-texto">#000000</label>
                     </div>
                 </div>
                 <div class="conteiner-back-color">
                     <h3>Fondo</h3>
                     <div class="input-control-back-color">
                         <input type="color" name="back-color" id="back-color">
-                        <label for="back-color">#000000</label>
+                        <label id="backColor"for="back-color">#000000</label>
                     </div>
                 </div>
             </div>
