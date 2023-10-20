@@ -141,3 +141,29 @@ NoColorBackText.onchange=()=>{
     }
 }
 
+/* funciones de botones de bordes y espaciados e interlineados*/
+const butonBorderNone = document.getElementById("border-none")
+const butonBorderClaro = document.getElementById("border-claro")
+const butonBorderOscuro = document.getElementById("border-oscuro")
+const inputPaddingText=document.getElementById("input-padding-text")
+
+
+butonBorderClaro.onclick=()=>{
+    textUp.style.textShadow="2px 2px white"
+    textDown.style.textShadow="2px 2px white"
+}
+butonBorderOscuro.onclick=()=>{
+    textDown.style.textShadow="2px 2px black"
+    textUp.style.textShadow="2px 2px black"
+}
+butonBorderNone.onclick=()=>{
+    textDown.style.textShadow="transparent"
+    textUp.style.textShadow="transparent"
+}
+
+inputPaddingText.oninput=()=>{
+    let newPadding = inputPaddingText.value
+    textDown.style.padding= newPadding+"px"
+    textUp.style.padding= newPadding+"px"
+}
+/*Termine por hoy */
