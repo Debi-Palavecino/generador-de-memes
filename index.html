@@ -21,7 +21,7 @@
     <main id="main">
         <div class="conteiner-meme">
             <p id="textUP" class="text-up">Texto</p>
-            <img src="" alt="">
+            <img src="" class="imagen" id="picture" >
             <p id="textDown"class="text-down">texto</p>
         </div>
     </main>
@@ -79,7 +79,7 @@
                     <h3>Fondo</h3>
                     <div class="input-control-back-color">
                         <input type="color" name="back-color" id="back-color">
-                        <label id="backColor"for="back-color">#000000</label>
+                        <label id="backColor"for="back-color">#FFFFFF</label>
                     </div>
                 </div>
             </div>
@@ -96,10 +96,12 @@
                 </div>
             </div>
             <div class="conteiner-input-padding-text">
-                <input type="number" name="" id="input-padding-text"  min="0">
+                <h3>Espaciado</h3>
+                <input type="number" id="input-padding-text" value="30" min="0">
             </div>
             <div class="conteiner-select-letter-line">
-                <select name="" id="select-value-letterSapcing">
+                <h3>Interlineado</h3>
+                <select name="" id="select-value-letterSpacing">
                     <option value="0.8">0.8</option>
                     <option value="1">1</option>
                     <option value="1.2">1.2</option>
@@ -116,15 +118,16 @@
             <!--Seccion de imagenes y todos sus inputs (type= range)-->
             <h2>Imagen</h2>
             <div class="conteiner-input-url">
-                <label for="conteiner-input-url">URL</label>
+                <h3>URL</h3>
                 <input type="text" name="input-for-url" id="input-text-url">
             </div>
+            <h3>Fondo</h3>
             <div class="section-Fondo">
-                <div>
+                <div class="input-back-color-image">
                     <input type="color" id="select-color-back-image">
                     <span for="select-color-back-image">#000000</span>
                 </div>
-                <div>
+                <div class="select-filters-image">
                     <select name="" id="select-filter">
                         <option value="">Ninguno<option>
                         <option value="">Desenfocar</option>
@@ -134,32 +137,45 @@
                     </select>
                 </div>
             </div>
-            <div>
+            <div class="conteiner-inputs-filters">
                 <h2>Filtros</h2>
-                <div>
-                    <div>
+                <div class="conteiner-panel-slider">
+                    <div class="panel-slider-controls">
+                        <label for="brightness">Brillo</label>
+                        <input type="range" id="brightness">
+                    </div>
+                    <div class="panel-slider-controls">
+                        <label for="opacity">Opacidad</label>
+                        <input type="range" name="" id="opacity">
+                    </div>
+                    <div class="panel-slider-controls">
+                        <label for="contrast">Contraste</label>
+                        <input type="range" name="" id="">
+                    </div>
+                    <div class="panel-slider-controls">
+                        <label for="desenfoque">Desenfoque</label>
+                        <input type="range" name="" id="desenfoque">
+                    </div>
+                    <div class="panel-slider-controls">
+                        <label for="grey-scale">Escala de Grises</label>
+                        <input type="range" name="" id="grey-scale">
+                    </div>
+                    <div class="panel-slider-controls">
+                        <label for="sepia">Sepia</label>
+                        <input type="range" name="" id="sepia">
+                    </div>
+                    <div class="panel-slider-controls">
+                        <label for="hue">hue</label>
+                        <input type="range" name="" id="hue">
 
                     </div>
-                    <div>
-
+                    <div class="panel-slider-controls">
+                        <label for="saturado">Saturado</label>
+                        <input type="range" name="" id="saturado">
                     </div>
-                    <div>
-
-                    </div>
-                    <div>
-
-                    </div>
-                    <div>
-
-                    </div>
-                    <div>
-
-                    </div>
-                    <div>
-
-                    </div>
-                    <div>
-
+                    <div  class="panel-slider-controls">
+                        <label for="neativo">Negativo</label>
+                        <input type="range" name="" id="negativo">
                     </div>
                 </div>
             </div>

@@ -52,15 +52,15 @@ buttonSectionText.onclick=()=>{
   const textUp = document.getElementById("textUP")
   const textDown = document.getElementById("textDown")
   const textAreaUP = document.getElementById("textarea-superior")
- const textAreaDown = document.getElementById("textarea-inferior")
+  const textAreaDown = document.getElementById("textarea-inferior")
   const checkboxNoTextUp = document.getElementById("up-no-text")
   const checkboxNoTextDown = document.getElementById("down-no-text")
 
  textAreaUP.oninput=()=>{
-    textUp.innerText = textAreaUP.value
+    textUp.innerHTML = textAreaUP.value
  }
  textAreaDown.oninput=()=>{
-    textDown.innerText= textAreaDown.value
+    textDown.innerHTML= textAreaDown.value
  }
 
  checkboxNoTextUp.onchange=()=>{
@@ -135,6 +135,7 @@ NoColorBackText.onchange=()=>{
     if (NoColorBackText.checked){
         textUp.style.backgroundColor="transparent"
         textDown.style.backgroundColor="transparent"
+        
     }else{
         textUp.style.backgroundColor=backColor.value
         textDown.style.backgroundColor=backColor.value
@@ -166,4 +167,20 @@ inputPaddingText.oninput=()=>{
     textDown.style.padding= newPadding+"px"
     textUp.style.padding= newPadding+"px"
 }
-/*Termine por hoy */
+/*Interlineado*/
+const interLine = document.getElementById("select-value-letterSpacing")
+
+interLine.onchange=()=>{
+    textUp.style.lineHeight = interLine.value;
+    textDown.style.lineHeight=interLine.value
+}
+
+
+/* funciones de Imagen y filtros */
+
+const urlImage = document.getElementById("input-text-url")
+const image = document.getElementById("picture")
+
+urlImage.oninput=()=>{
+    image.src=urlImage.value
+}

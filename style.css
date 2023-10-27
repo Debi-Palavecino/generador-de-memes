@@ -3,7 +3,7 @@
  padding: 0;
 }
 .oscuro{
-    color:#8d857c;
+    color:#000000;
 }
 .claro{
     color: #331D2C;
@@ -54,19 +54,23 @@ main{
 .conteiner-meme{
     width: 450px;
     height: 400px;
-    background-color: black;
     display: flex;
     flex-direction: column;
-    justify-content: space-between
+    justify-content: space-between;
+    background-color: black;
 }
 p{
-    width: auto;
-    padding: 30px;
     background-color: rgb(255, 255, 255);
-    text-align: center;
-    color: black;
+    padding:30px;
+    text-align:center;
+    word-wrap: break-word;/*tuve que buscar y usar esta propiedad que si bien no conocia para que se usaba,
+    lo aprendi con google porque tenia el problema que el texto se desbordaba del contenedor*/
 }
-
+.imagen {
+    width: 100%;
+    object-fit: cover;
+    background-image: url();
+}
 aside{
     position: fixed; /* Debe estar posicionado de manera explícita */
     top: 0;
@@ -77,13 +81,14 @@ aside{
     box-shadow: -10px  0px 20px #a78295a5;
     z-index: 2;
     background-color: #C4C1A4;
+    overflow: hidden;
 }
 .cerrar-panel{
     display: none;
 }
 h2{
     text-align: center;
-    margin: 20px;
+    margin: 10px;
 }
 h3{
     font-size: 16px;
@@ -93,8 +98,10 @@ h3{
     display: flex;
     flex-direction: column;
     width: 200px;
+    height: 100%;
     justify-content: center;
     margin: 10px;
+    
 
 }
 .texto-superior{
@@ -123,7 +130,7 @@ h3{
     width: 100%;
     height: 30px;
     border-radius: 5px;
-    background-color: #795575;
+    background-color:#996f95;
     margin: 5px;
 }
 .flex-conteiner-butons{
@@ -135,7 +142,7 @@ h3{
 #fonts-sizes{
     width: 50%;
     height: 30px;
-    background-color: #795575;
+    background-color:#996f95;
     border-style: none;
     border: 1px solid #3F2E3E;
     border-radius: 5px;
@@ -175,7 +182,7 @@ h3{
     border-radius: 10px;
     padding: 5px;
     height: 20px;
-    background-color: #795575;
+    background-color:#996f95;
 }
 
 #color-texto{
@@ -205,7 +212,7 @@ input[type="color"]::-webkit-color-swatch {
     border-radius: 10px;
     padding: 5px;
     height: 20px;
-    background-color: #795575;
+    background-color:#996f95;
 }
 #back-color{
     width: 20px; /* Ancho del círculo */
@@ -229,7 +236,7 @@ input[type="color"]::-webkit-color-swatch {
 .buttons-border button{
     appearance: none;
     border: none;
-    background-color: #795575;
+    background-color: #996f95;
     border-radius: 10px;
     padding: 5px;
 }
@@ -237,3 +244,118 @@ input[type="color"]::-webkit-color-swatch {
 .block{
     display: none;
 }
+.conteiner-input-padding-text{
+    margin: 5px;
+}
+#input-padding-text{
+    border-radius: 10px;
+    background-color:#996f95;
+    color: #EFE1D1;
+    height: 20px;
+    border:1px solid black;
+    text-align: center;
+} 
+#select-value-letterSpacing{
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 20px;
+    width: 150px;
+    background-color: #996f95;
+    color: #EFE1D1;
+}
+#select-value-letterSpacing option{
+    background-color: #996f95;
+    color:#EFE1D1;
+}
+
+
+
+#section-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.conteiner-input-url{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+#input-text-url{
+    border-radius: 15px;
+    height: 25px;
+    background-color: #996f95;
+    border: 1px solid #8d857c;
+    color: #EFE1D1;
+}
+.section-Fondo{
+   display:flex;
+   flex-direction: row;
+   justify-content: space-between;
+   height: 30px;
+   padding: 10px;
+}
+.input-back-color-image{
+    width: 50%;
+    height: 25px;
+    border-radius: 15px;
+    border: 1px solid #8d857c;
+    background-color: #996f95;
+    margin: 2px;
+    text-align: center;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    appearance: none;
+    border-radius: 50%;
+}
+#select-color-back-image{
+    width: 20px; /* Ancho del círculo */
+    height: 25px; /* Alto del círculo */
+    background:transparent;
+    border: none;
+    margin: 2.5px;
+}
+.select-filters-image{
+    width: 50%;
+    height: 30px;
+}
+#select-filter{
+    height: 30px;
+    border: 1px solid #8d857c;
+    border-radius: 15px;
+    background-color: #996f95;
+}
+.conteiner-inputs-filters{
+    display: flex;
+    flex-direction: column;
+}
+.conteiner-panel-slider{
+   width: 100%;
+}
+.panel-slider-controls{
+    display: flex;
+    flex-direction: column;
+    height: 30px;
+    margin: 10px;
+}
+
+input[type="range"] {
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #5d5555;
+}
+  
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #954caf;
+    cursor: pointer;
+}
+/* todavia no puedo descubrir la propiedad que modifica directamente la barra del slider para mostrar el progreso */
+ 
