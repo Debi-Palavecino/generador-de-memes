@@ -133,12 +133,14 @@ backColor.oninput=()=>{
 
 NoColorBackText.onchange=()=>{
     if (NoColorBackText.checked){
-        textUp.style.backgroundColor="transparent"
+        textUp.style.backgroundColor= 'transparent'
         textDown.style.backgroundColor="transparent"
+        image.style.position="absolute"
         
     }else{
         textUp.style.backgroundColor=backColor.value
         textDown.style.backgroundColor=backColor.value
+        image.style.position="static"
     }
 }
 
@@ -182,5 +184,60 @@ const urlImage = document.getElementById("input-text-url")
 const image = document.getElementById("picture")
 
 urlImage.oninput=()=>{
-    image.src=urlImage.value
+    image.style.backgroundImage= "url("+urlImage.value+")"
+}
+
+/*funciones fondo color de imagen */
+const backColorImage= document.getElementById("select-color-back-image")
+const spanColorImage = document.getElementById("span-color-back-image")
+const conteinerMeme = document.getElementById("ConteinerMeme")
+
+
+backColorImage.oninput=()=>{
+    spanColorImage.innerText = backColorImage.value
+    conteinerMeme.style.backgroundColor=backColorImage.value
+}
+
+/* funciones de flitros slider*/
+const opacidad = document.getElementById("opacity")
+const contraste = document.getElementById("contrast")
+const desenfoque= document.getElementById("desenfoque")
+const greyScale = document.getElementById("grey-scale")
+const sepia =document.getElementById("sepia")
+const hue = document.getElementById("hue")
+const saturado = document.getElementById("saturado")
+const negativo =document.getElementById("negativo")
+const bright = document.getElementById("brightness");
+const buttonRestablecerFiltros=document.getElementById("restablecer-filtros")
+bright.oninput= () => {
+    image.style.filter = "brightness(" + bright.value + "%)";
+}
+opacidad.oninput=()=>{
+    image.style.filter= "opacity("+opacidad.value +"%)";
+}
+contraste.oninput=()=>{
+    image.style.filter="contrast("+contraste.value+"%)"
+}
+desenfoque.oninput=()=>{
+    image.style.filter="blur("+desenfoque.value+"px)"
+}
+
+greyScale.oninput=()=>{
+    image.style.filter="grayscale("+greyScale.value+"%)"
+}
+sepia.oninput=()=>{
+    image.style.filter="sepia("+sepia.value+"%)"
+}
+hue.oninput=()=>{
+    image.style.filter="hue-rotate("+hue.value+"deg)"
+}
+
+saturado.oninput=()=>{
+    image.style.filter="saturate("+saturado.value+"%)"
+}
+negativo.oninput=()=>{
+    image.style.filter="invert("+negativo.value+"%)"
+}
+buttonRestablecerFiltros.onclick=()=>{
+    bright.value=100+"%"
 }

@@ -19,9 +19,9 @@
     <br>
     
     <main id="main">
-        <div class="conteiner-meme">
+        <div class="conteiner-meme" id="ConteinerMeme">
             <p id="textUP" class="text-up">Texto</p>
-            <img src="" class="imagen" id="picture" >
+            <div  class="imagen" id="picture" ></div>
             <p id="textDown"class="text-down">texto</p>
         </div>
     </main>
@@ -125,7 +125,7 @@
             <div class="section-Fondo">
                 <div class="input-back-color-image">
                     <input type="color" id="select-color-back-image">
-                    <span for="select-color-back-image">#000000</span>
+                    <span id="span-color-back-image" for="select-color-back-image">#000000</span>
                 </div>
                 <div class="select-filters-image">
                     <select name="" id="select-filter">
@@ -142,43 +142,45 @@
                 <div class="conteiner-panel-slider">
                     <div class="panel-slider-controls">
                         <label for="brightness">Brillo</label>
-                        <input type="range" id="brightness">
+                        <input type="range" id="brightness" value="100" step="10" min="0" max="100">
                     </div>
                     <div class="panel-slider-controls">
                         <label for="opacity">Opacidad</label>
-                        <input type="range" name="" id="opacity">
+                        <input type="range" name="" id="opacity" value="100">
                     </div>
                     <div class="panel-slider-controls">
                         <label for="contrast">Contraste</label>
-                        <input type="range" name="" id="">
+                        <input type="range" name="" id="contrast" value="0">
                     </div>
                     <div class="panel-slider-controls">
                         <label for="desenfoque">Desenfoque</label>
-                        <input type="range" name="" id="desenfoque">
+                        <input type="range" name="" id="desenfoque" value="0">
                     </div>
                     <div class="panel-slider-controls">
                         <label for="grey-scale">Escala de Grises</label>
-                        <input type="range" name="" id="grey-scale">
+                        <input type="range" name="" id="grey-scale" value="0">
                     </div>
                     <div class="panel-slider-controls">
                         <label for="sepia">Sepia</label>
-                        <input type="range" name="" id="sepia">
+                        <input type="range" name="" id="sepia" value="0">
                     </div>
                     <div class="panel-slider-controls">
                         <label for="hue">hue</label>
-                        <input type="range" name="" id="hue">
+                        <input type="range" name="" id="hue" value="0">
 
                     </div>
                     <div class="panel-slider-controls">
                         <label for="saturado">Saturado</label>
-                        <input type="range" name="" id="saturado">
+                        <input type="range" name="" id="saturado" value="0">
                     </div>
                     <div  class="panel-slider-controls">
                         <label for="neativo">Negativo</label>
-                        <input type="range" name="" id="negativo">
+                        <input type="range" name="" id="negativo"value="0" min="0" max="100" >
                     </div>
                 </div>
             </div>
+            <button class="filtros-normales" id="restablecer-filtros"> Restablecer Filtros</button>
+
         </div>
     </aside>
 </body>

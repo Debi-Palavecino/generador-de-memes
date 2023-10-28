@@ -58,19 +58,27 @@ main{
     flex-direction: column;
     justify-content: space-between;
     background-color: black;
+    box-sizing: border-box;
+    position: relative;
 }
 p{
     background-color: rgb(255, 255, 255);
     padding:30px;
+    z-index: 2;
     text-align:center;
     word-wrap: break-word;/*tuve que buscar y usar esta propiedad que si bien no conocia para que se usaba,
     lo aprendi con google porque tenia el problema que el texto se desbordaba del contenedor*/
 }
 .imagen {
     width: 100%;
-    object-fit: cover;
+    height: 100%;
+    object-fit: fill;
     background-image: url();
+    background-size: cover;
+    background-position: center;
 }
+
+
 aside{
     position: fixed; /* Debe estar posicionado de manera explícita */
     top: 0;
@@ -202,7 +210,7 @@ input[type="color"]::-webkit-color-swatch {
 .conteiner-back-color{
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 50%;
 }
 .input-control-back-color{
     display: flex;
@@ -219,6 +227,12 @@ input[type="color"]::-webkit-color-swatch {
     height: 25px; /* Alto del círculo */
     background:transparent;
     border: none;
+     /* Color de fondo del círculo */
+}
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    appearance: none;
+    border-radius: 50%;
 }
 .checkbox-fondo-transparente{
     margin:5px;
@@ -275,6 +289,7 @@ input[type="color"]::-webkit-color-swatch {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .conteiner-input-url{
@@ -288,6 +303,7 @@ input[type="color"]::-webkit-color-swatch {
     background-color: #996f95;
     border: 1px solid #8d857c;
     color: #EFE1D1;
+    text-align: center;
 }
 .section-Fondo{
    display:flex;
@@ -305,11 +321,7 @@ input[type="color"]::-webkit-color-swatch {
     margin: 2px;
     text-align: center;
 }
-input[type="color"]::-webkit-color-swatch {
-    border: none;
-    appearance: none;
-    border-radius: 50%;
-}
+
 #select-color-back-image{
     width: 20px; /* Ancho del círculo */
     height: 25px; /* Alto del círculo */
@@ -337,25 +349,51 @@ input[type="color"]::-webkit-color-swatch {
 .panel-slider-controls{
     display: flex;
     flex-direction: column;
+    height: 25px;
+    margin: 10px;
+}
+/*todavia no puedo descubrir la propiedad que modifica directamente la barra del slider para mostrar el progreso */
+ 
+input[type='range'] {
+    display: block;
+    width: 200px;
+}
+  
+input[type='range']:focus {
+    outline: none;
+}
+  
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+  
+input[type=range]::-webkit-slider-thumb {
+    background-color: #777;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #333;
+    border-radius: 50%;
+    margin: -7px;
+}
+  
+input[type=range]::-webkit-slider-runnable-track {
+    background-color: #9b3dbd;
+    height: 3px;
+} 
+input[type=range]:focus::-webkit-slider-runnable-track {
+    outline: none;
+    background-color: #41154f;
+    
+}
+
+.filtros-normales{
+    background-color:#996f95;
+    border-style: none;
+    border-radius:5px;
+    border: 1px solid #331D2C;
+    width: 50%;
     height: 30px;
     margin: 10px;
 }
-
-input[type="range"] {
-    appearance: none;
-    width: 100%;
-    height: 10px;
-    border-radius: 5px;
-    background: #5d5555;
-}
-  
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #954caf;
-    cursor: pointer;
-}
-/* todavia no puedo descubrir la propiedad que modifica directamente la barra del slider para mostrar el progreso */
- 
