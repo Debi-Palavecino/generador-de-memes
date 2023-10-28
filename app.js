@@ -209,35 +209,41 @@ const saturado = document.getElementById("saturado")
 const negativo =document.getElementById("negativo")
 const bright = document.getElementById("brightness");
 const buttonRestablecerFiltros=document.getElementById("restablecer-filtros")
-bright.oninput= () => {
-    image.style.filter = "brightness(" + bright.value + "%)";
-}
-opacidad.oninput=()=>{
-    image.style.filter= "opacity("+opacidad.value +"%)";
-}
-contraste.oninput=()=>{
-    image.style.filter="contrast("+contraste.value+"%)"
-}
-desenfoque.oninput=()=>{
-    image.style.filter="blur("+desenfoque.value+"px)"
-}
+const applyFilters = () => {
+    image.style.filter = `
+        brightness(${bright.value}%)
+        opacity(${opacidad.value}%)
+        contrast(${contraste.value}%)
+        blur(${desenfoque.value}px)
+        grayscale(${greyScale.value}%)
+        sepia(${sepia.value}%)
+        hue-rotate(${hue.value}deg)
+        saturate(${saturado.value}%)
+        invert(${negativo.value}%)
+    `;
+};
 
-greyScale.oninput=()=>{
-    image.style.filter="grayscale("+greyScale.value+"%)"
-}
-sepia.oninput=()=>{
-    image.style.filter="sepia("+sepia.value+"%)"
-}
-hue.oninput=()=>{
-    image.style.filter="hue-rotate("+hue.value+"deg)"
-}
+bright.oninput=applyFilters;
+opacidad.oninput=applyFilters;
+contraste.oninput=applyFilters;
+desenfoque.oninput=applyFilters;
+greyScale.oninput=applyFilters;
+sepia.oninput=applyFilters;
+hue.oninput=applyFilters;
+saturado.oninput=applyFilters;
+negativo.oninput=applyFilters;
 
-saturado.oninput=()=>{
-    image.style.filter="saturate("+saturado.value+"%)"
-}
-negativo.oninput=()=>{
-    image.style.filter="invert("+negativo.value+"%)"
-}
-buttonRestablecerFiltros.onclick=()=>{
-    bright.value=100+"%"
-}
+const resetFilters = () => {
+    bright.value = 100;
+    opacidad.value = 100;
+    contraste.value = 100;
+    desenfoque.value = 0;
+    greyScale.value = 0;
+    sepia.value = 0;
+    hue.value = 0;
+    saturado.value = 100;
+    negativo.value = 0;
+    applyFilters(); // Aplicar filtros después de restablecer los valores
+};
+
+buttonRestablecerFiltros.onclick = resetFilters;
