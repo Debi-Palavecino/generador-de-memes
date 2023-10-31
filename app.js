@@ -2,18 +2,26 @@ const buttonImageSection = document.getElementById("image-section");
 const sectionImage = document.getElementById("section-image")
 const sectionText = document.getElementById("section-text")
 const buttonSectionText= document.getElementById("texto-section")
-
+const buttonClosePanel = document.getElementById ("close.panel")
+const asidePanel = document.getElementById("option")
 
 buttonImageSection.onclick = () => {
     if(sectionText.style.display="block"){
         sectionText.style.display="none"
         sectionImage.style.display="block"
+        asidePanel.classList.remove("active");
+
     }
 };
 buttonSectionText.onclick=()=>{
     if(sectionImage.style.display="block")
     sectionImage.style.display="none"
     sectionText.style.display="block"
+    asidePanel.classList.remove("active");
+
+}
+buttonClosePanel.onclick=()=>{
+    asidePanel.classList.add("active");
 }
   /* primeras funciones para poder seguir estilizando el html */
 
@@ -208,7 +216,7 @@ const hue = document.getElementById("hue")
 const saturado = document.getElementById("saturado")
 const negativo =document.getElementById("negativo")
 const bright = document.getElementById("brightness");
-const buttonRestablecerFiltros=document.getElementById("restablecer-filtros")
+const botonDescarga=document.getElementById("restablecer-filtros")
 const applyFilters = () => {
     image.style.filter = `
         brightness(${bright.value}%)
@@ -246,4 +254,14 @@ const resetFilters = () => {
     applyFilters(); // Aplicar filtros después de restablecer los valores
 };
 
-buttonRestablecerFiltros.onclick = resetFilters;
+botonDescarga.onclick = resetFilters;
+
+
+/*boton descarga y su funcion */ 
+botonDescarga.onclick = () => {
+    domtoimage.toBlob(document.getElementById('image'))
+        .then(function (blob) {
+            window.saveAs(blob, 'meme.png');
+        });
+};
+    
