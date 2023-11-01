@@ -216,7 +216,7 @@ const hue = document.getElementById("hue")
 const saturado = document.getElementById("saturado")
 const negativo =document.getElementById("negativo")
 const bright = document.getElementById("brightness");
-const botonDescarga=document.getElementById("restablecer-filtros")
+const botonResetFilters=document.getElementById("restablecer-filtros")
 const applyFilters = () => {
     image.style.filter = `
         brightness(${bright.value}%)
@@ -254,11 +254,15 @@ const resetFilters = () => {
     applyFilters(); // Aplicar filtros después de restablecer los valores
 };
 
-botonDescarga.onclick = resetFilters;
+botonResetFilters.onclick = resetFilters;
+
 
 
 /*boton descarga y su funcion */ 
+const botonDescarga = document.getElementById("download-image")
+
 botonDescarga.onclick = () => {
+    console.log("no funciono")
     domtoimage.toBlob(document.getElementById('image'))
         .then(function (blob) {
             window.saveAs(blob, 'meme.png');
