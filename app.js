@@ -259,13 +259,12 @@ botonResetFilters.onclick = resetFilters;
 
 
 /*boton descarga y su funcion */ 
-const botonDescarga = document.getElementById("download-image")
+const butonDownload = document.getElementById('download-image')
 
-botonDescarga.onclick = () => {
-    console.log("no funciono")
-    domtoimage.toBlob(document.getElementById('image'))
-        .then(function (blob) {
-            window.saveAs(blob, 'meme.png');
-        });
-};
+butonDownload.onclick=()=>{
+    domtoimage.toBlob(document.getElementById('Conteiner.Meme'))
+    .then(function(blob){
+        window.saveAs(blob,'meme.png')
+    });
     
+}
